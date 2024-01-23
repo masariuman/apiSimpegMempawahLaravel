@@ -9,8 +9,8 @@ class DashboardSimpegController extends Controller
     public function dashboard()
     {
         $CountAktif = DB::select('SELECT count(*) as CountAktif FROM pegawai WHERE is_deleted = 0 AND kode_kedudukan_pegawai = 1');
-        $CountWanita = DB::select('SELECT count(*) as CountWanita FROM pegawai WHERE is_deleted = 0 AND kode_jns_kelamin = 2');
-        $CountPria = DB::select('SELECT count(*) as CountPria FROM pegawai WHERE is_deleted = 0 AND kode_jns_kelamin = 1');
+        $CountWanita = DB::select('SELECT count(*) as CountWanita FROM pegawai WHERE is_deleted = 0 AND kode_jns_kelamin = 2 AND kode_kedudukan_pegawai = 1');
+        $CountPria = DB::select('SELECT count(*) as CountPria FROM pegawai WHERE is_deleted = 0 AND kode_jns_kelamin = 1 AND kode_kedudukan_pegawai = 1');
         $CountPNS = DB::select('SELECT count(*) as CountPNS FROM pegawai WHERE is_deleted = 0 AND kode_kedudukan_pegawai = 1 AND kode_status_pegawai = 2');
         $CountPPPK = DB::select('SELECT count(*) as CountPPPK FROM pegawai WHERE is_deleted = 0 AND kode_kedudukan_pegawai = 1 AND kode_status_pegawai = 7');
         $CountCPNS = DB::select('SELECT count(*) as CountCPNS FROM pegawai WHERE is_deleted = 0 AND kode_kedudukan_pegawai = 1 AND kode_status_pegawai = 1');
