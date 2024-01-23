@@ -15,6 +15,9 @@ Route::group(['prefix' => 'v2'], function () {
             Route::get('/all', 'EMPController@all');
             Route::get('/{nip}', 'EMPController@person');
         });
+        Route::group(['prefix' => 'sipmewah'], function () {
+            Route::get('/dashboard', 'DashboardSimpegController@dashboard');
+        });
     });
 });
 
