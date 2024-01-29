@@ -207,4 +207,10 @@ class DashboardSimpegController extends Controller
         $datasets["CountYear5"] = $CountYear5;
         return response()->json($datasets);
     }
+
+    public function aktif() {
+        $CountAktif = DB::select('SELECT count(*) as CountAktif FROM pegawai WHERE is_deleted = 0 AND kode_kedudukan_pegawai = 1');
+        $datasets["CountAktif"] = $CountAktif[0]->CountAktif;
+        return response()->json($datasets);
+    }
 }

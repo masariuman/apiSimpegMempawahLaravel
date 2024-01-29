@@ -17,6 +17,7 @@ Route::group(['prefix' => 'v2'], function () {
         });
         Route::group(['prefix' => 'sipmewah'], function () {
             Route::get('/dashboard', 'DashboardSimpegController@dashboard');
+            Route::get('/aktif', 'DashboardSimpegController@aktif');
         });
     });
 });
