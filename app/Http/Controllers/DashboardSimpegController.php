@@ -209,8 +209,28 @@ class DashboardSimpegController extends Controller
     }
 
     public function aktif() {
-        $CountAktif = DB::select('SELECT count(*) as CountAktif FROM pegawai WHERE is_deleted = 0 AND kode_kedudukan_pegawai = 1');
-        $datasets["CountAktif"] = $CountAktif[0]->CountAktif;
-        return response()->json($datasets);
+        $rest_api_url = 'https://dashboard.sipmewah.masariuman.com/v2/api/sipmewah/dashboard';
+        // create & initialize a curl session
+        $curl = curl_init();
+
+        // set our url with curl_setopt()
+        curl_setopt($curl, CURLOPT_URL, $rest_api_url);
+
+        // return the transfer as a string, also with setopt()
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+        // curl_exec() executes the started curl session
+        // $output contains the output string
+        $response_data = curl_exec($curl);
+
+        // close curl resource to free up system resources
+        // (deletes the variable made by curl_init)
+        curl_close($curl);
+
+        dd(json_decode($response_data));
+
+        // $CountAktif = DB::select('SELECT count(*) as CountAktif FROM pegawai WHERE is_deleted = 0 AND kode_kedudukan_pegawai = 1');
+        // $datasets["CountAktif"] = $CountAktif[0]->CountAktif;
+        // return response()->json($datasets);
     }
 }
