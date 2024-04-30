@@ -1,19 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\SIASNController;
+// use App\Http\Controllers\SIASNController;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class EMPController extends Controller
 {
-    private $siasn;
+    // private $siasn;
 
-    public function __construct()
-    {
-        $this->siasn = new SIASNController;
-    }
+    // public function __construct()
+    // {
+    //     $this->siasn = new SIASNController;
+    // }
 
     public function aktif()
     {
@@ -141,8 +141,8 @@ class EMPController extends Controller
         $datasets[0]->PROYEKSI_USIA_BUP = null;
         $datasets[0]->FILE_EXISTS = null;
 
-        $this->siasn->get_api_ws();
-        $this->siasn->get_bkn_sso();
+        // $this->siasn->get_api_ws();
+        // $this->siasn->get_bkn_sso();
 
         // $foto_pegawai = $this->siasn->foto_pegawai($nip);
         // ($foto_pegawai[0] === "{") ? $foto_pegawai = null : $foto_pegawai = 'data:image/jpeg;base64,'.base64_encode($foto_pegawai);
