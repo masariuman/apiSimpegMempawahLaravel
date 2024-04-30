@@ -144,9 +144,10 @@ class EMPController extends Controller
         $this->siasn->get_api_ws();
         $this->siasn->get_bkn_sso();
 
-        $foto_pegawai = $this->siasn->foto_pegawai($nip);
-        ($foto_pegawai[0] === "{") ? $foto_pegawai = null : $foto_pegawai = 'data:image/jpeg;base64,'.base64_encode($foto_pegawai);
-        $datasets[0]->FILE_BMP = $foto_pegawai;
+        // $foto_pegawai = $this->siasn->foto_pegawai($nip);
+        // ($foto_pegawai[0] === "{") ? $foto_pegawai = null : $foto_pegawai = 'data:image/jpeg;base64,'.base64_encode($foto_pegawai);
+        // $datasets[0]->FILE_BMP = $foto_pegawai;
+        $datasets[0]->FILE_BMP = "http://presensi.mempawahkab.go.id/upload/foto/140012.png";
 
         return response()->json($datasets);
     }
