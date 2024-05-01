@@ -149,6 +149,6 @@ class EMPController extends Controller
         // $datasets[0]->FILE_BMP = $foto_pegawai;
         $datasets[0]->FILE_BMP = "http://presensi.mempawahkab.go.id/upload/foto/140012.png";
 
-        return response()->json($datasets);
+        return $datasets[0];
     }
 }
