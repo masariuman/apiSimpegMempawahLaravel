@@ -54,7 +54,7 @@ class SOTKController extends Controller
             $array['ESELON'] = $dataEselon;
             $SOTK[] = $array;
         }
-        return $SOTK[0];
+        return response()->json($SOTK);
     }
 
     public function code(string $code)
@@ -106,6 +106,6 @@ class SOTKController extends Controller
             $array['ESELON'] = $dataEselon;
             $SOTK[] = $array;
         }
-        return $SOTK[0];
+        return response()->json($SOTK);
     }
 }
