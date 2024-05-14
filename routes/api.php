@@ -19,6 +19,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::group(['prefix' => 'v1'], function () {
+    Route::group(['prefix' => 'sotk'], function () {
+        Route::get('/all', 'SOTKController@all');
+        Route::get('/{code}', 'SOTKController@code');
+    });
+});
+
 Route::group(['prefix' => 'v2'], function () {
     Route::group(['prefix' => 'emp'], function () {
         Route::get('/', 'EMPController@aktif');
