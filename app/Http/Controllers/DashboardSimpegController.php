@@ -54,6 +54,7 @@ class DashboardSimpegController extends Controller
         $CountPangkat4c = DB::select('SELECT count(*) as CountPangkat4c FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 43 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
         $CountPangkat4d = DB::select('SELECT count(*) as CountPangkat4d FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 44 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
         $CountPangkat4e = DB::select('SELECT count(*) as CountPangkat4e FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 45 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
+        $CountPangkatPPPKIII = DB::select('SELECT count(*) as CountPangkatPPPKIII FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 30 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
         $CountPangkatPPPKV = DB::select('SELECT count(*) as CountPangkatPPPKV FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 50 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
         $CountPangkatPPPKVII = DB::select('SELECT count(*) as CountPangkatPPPKVII FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 70 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
         $CountPangkatPPPKIX = DB::select('SELECT count(*) as CountPangkatPPPKIX FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 90 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
@@ -198,6 +199,7 @@ class DashboardSimpegController extends Controller
         $datasets["CountPangkat4c"] = $CountPangkat4c[0]->CountPangkat4c;
         $datasets["CountPangkat4d"] = $CountPangkat4d[0]->CountPangkat4d;
         $datasets["CountPangkat4e"] = $CountPangkat4e[0]->CountPangkat4e;
+        $datasets["CountPangkatPPPKIII"] = $CountPangkatPPPKIII[0]->CountPangkatPPPKIII;
         $datasets["CountPangkatPPPKV"] = $CountPangkatPPPKV[0]->CountPangkatPPPKV;
         $datasets["CountPangkatPPPKVII"] = $CountPangkatPPPKVII[0]->CountPangkatPPPKVII;
         $datasets["CountPangkatPPPKIX"] = $CountPangkatPPPKIX[0]->CountPangkatPPPKIX;
