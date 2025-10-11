@@ -37,23 +37,65 @@ class DashboardSimpegController extends Controller
         $CountEselon5a = DB::select('SELECT count(*) as CountEselon5a FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND j.kode_eselon = 51');
         $CountEselon5b = DB::select('SELECT count(*) as CountEselon5b FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND j.kode_eselon = 52');
         $CountNonEselon = DB::select("SELECT count(*) as CountNonEselon FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND j.kode_eselon = ''");
-        $CountPangkat1a = DB::select('SELECT count(*) as CountPangkat1a FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 11 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
-        $CountPangkat1b = DB::select('SELECT count(*) as CountPangkat1b FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 12 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
-        $CountPangkat1c = DB::select('SELECT count(*) as CountPangkat1c FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 13 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
-        $CountPangkat1d = DB::select('SELECT count(*) as CountPangkat1d FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 14 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
-        $CountPangkat2a = DB::select('SELECT count(*) as CountPangkat2a FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 21 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
-        $CountPangkat2b = DB::select('SELECT count(*) as CountPangkat2b FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 22 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
-        $CountPangkat2c = DB::select('SELECT count(*) as CountPangkat2c FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 23 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
-        $CountPangkat2d = DB::select('SELECT count(*) as CountPangkat2d FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 24 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
-        $CountPangkat3a = DB::select('SELECT count(*) as CountPangkat3a FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 31 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
-        $CountPangkat3b = DB::select('SELECT count(*) as CountPangkat3b FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 32 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
-        $CountPangkat3c = DB::select('SELECT count(*) as CountPangkat3c FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 33 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
-        $CountPangkat3d = DB::select('SELECT count(*) as CountPangkat3d FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 34 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
-        $CountPangkat4a = DB::select('SELECT count(*) as CountPangkat4a FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 41 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
-        $CountPangkat4b = DB::select('SELECT count(*) as CountPangkat4b FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 42 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
-        $CountPangkat4c = DB::select('SELECT count(*) as CountPangkat4c FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 43 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
-        $CountPangkat4d = DB::select('SELECT count(*) as CountPangkat4d FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 44 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
-        $CountPangkat4e = DB::select('SELECT count(*) as CountPangkat4e FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 45 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
+        $Pangkat = DB::select('SELECT p.nip, r.kode_gol_ruang FROM (((((((((((((((( pegawai p LEFT JOIN master_jab j ON p.nip = j.nip_defenitif ) LEFT JOIN riw_pangkat r ON p.nip = r.nip ) LEFT JOIN ref_wil_prov rwp ON p.kode_wil_prov = rwp.kode ) LEFT JOIN ref_wil_kab rwkab ON p.kode_wil_kab = rwkab.kode ) LEFT JOIN ref_wil_kec rwkec ON p.kode_wil_kec = rwkec.kode ) LEFT JOIN ref_wil_kel rwkel ON p.kode_wil_kel = rwkel.kode ) LEFT JOIN ref_jns_kelamin jk ON p.kode_jns_kelamin = jk.kode ) LEFT JOIN ref_agama ra ON p.kode_agama = ra.kode ) LEFT JOIN ref_status_pegawai rsp ON p.kode_status_pegawai = rsp.kode ) LEFT JOIN ref_jns_pegawai rjp ON p.kode_jns_pegawai = rjp.kode ) LEFT JOIN ref_status_kawin rsk ON p.kode_status_kawin = rsk.kode ) LEFT JOIN ref_gol_darah rgd ON p.kode_gol_darah = rgd.kode ) LEFT JOIN ref_eselon re ON j.kode_eselon = re.keselon ) LEFT JOIN master_satuan_kerja msk ON j.id_satker = msk.kode_satker ) LEFT JOIN ref_jns_jab rjj ON j.kode_jns_jab = rjj.kode ) LEFT JOIN ref_kategori_jab rkj ON j.kode_kategori_jab = rkj.kode ) WHERE p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_kedudukan_pegawai = 1 AND r.is_deleted = 0 AND r.tmt_pangkat = ( SELECT MAX( riw_pangkat.tmt_pangkat ) FROM riw_pangkat WHERE p.nip = riw_pangkat.nip AND riw_pangkat.is_deleted = 0 )');
+        $CountPangkat1a = $CountPangkat1b = $CountPangkat1c = $CountPangkat1d = $CountPangkat2a = $CountPangkat2b = $CountPangkat2c = $CountPangkat2d = $CountPangkat3a = $CountPangkat3b = $CountPangkat3c = $CountPangkat3d = $CountPangkat4a = $CountPangkat4b = $CountPangkat4c = $CountPangkat4d = $CountPangkat4e = 0;
+        foreach ($Pangkat as $key => $value) {
+            switch ($value->kode_gol_ruang) {
+                case 11:
+                    $CountPangkat1a++;
+                    break;
+                case 12:
+                    $CountPangkat1b++;
+                    break;
+                case 13:
+                    $CountPangkat1c++;
+                    break;
+                case 14:
+                    $CountPangkat1d++;
+                    break;
+                case 21:
+                    $CountPangkat2a++;
+                    break;
+                case 22:
+                    $CountPangkat2b++;
+                    break;
+                case 23:
+                    $CountPangkat2c++;
+                    break;
+                case 24:
+                    $CountPangkat2d++;
+                    break;
+                case 31:
+                    $CountPangkat3a++;
+                    break;
+                case 32:
+                    $CountPangkat3b++;
+                    break;
+                case 33:
+                    $CountPangkat3c++;
+                    break;
+                case 34:
+                    $CountPangkat3d++;
+                    break;
+                case 41:
+                    $CountPangkat4a++;
+                    break;
+                case 42:
+                    $CountPangkat4b++;
+                    break;
+                case 43:
+                    $CountPangkat4c++;
+                    break;
+                case 44:
+                    $CountPangkat4d++;
+                    break;
+                case 45:
+                    $CountPangkat4e++;
+                    break;
+                default:
+                    break;
+            }
+        }
         $CountPangkatPPPKIII = DB::select('SELECT count(*) as CountPangkatPPPKIII FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 48 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
         $CountPangkatPPPKV = DB::select('SELECT count(*) as CountPangkatPPPKV FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 50 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
         $CountPangkatPPPKVII = DB::select('SELECT count(*) as CountPangkatPPPKVII FROM pegawai a INNER JOIN riw_pangkat b ON a.nip = b.nip WHERE a.kode_kedudukan_pegawai = 1 AND a.is_deleted = 0 AND b.is_deleted = 0 AND kode_gol_ruang = 70 AND b.id = (SELECT MAX(id) FROM riw_pangkat WHERE b.nip = nip)');
@@ -182,23 +224,23 @@ class DashboardSimpegController extends Controller
         $datasets["CountEselon5a"] = $CountEselon5a[0]->CountEselon5a;
         $datasets["CountEselon5b"] = $CountEselon5b[0]->CountEselon5b;
         $datasets["CountNonEselon"] = $CountNonEselon[0]->CountNonEselon;
-        $datasets["CountPangkat1a"] = $CountPangkat1a[0]->CountPangkat1a;
-        $datasets["CountPangkat1b"] = $CountPangkat1b[0]->CountPangkat1b;
-        $datasets["CountPangkat1c"] = $CountPangkat1c[0]->CountPangkat1c;
-        $datasets["CountPangkat1d"] = $CountPangkat1d[0]->CountPangkat1d;
-        $datasets["CountPangkat2a"] = $CountPangkat2a[0]->CountPangkat2a;
-        $datasets["CountPangkat2b"] = $CountPangkat2b[0]->CountPangkat2b;
-        $datasets["CountPangkat2c"] = $CountPangkat2c[0]->CountPangkat2c;
-        $datasets["CountPangkat2d"] = $CountPangkat2d[0]->CountPangkat2d;
-        $datasets["CountPangkat3a"] = $CountPangkat3a[0]->CountPangkat3a;
-        $datasets["CountPangkat3b"] = $CountPangkat3b[0]->CountPangkat3b;
-        $datasets["CountPangkat3c"] = $CountPangkat3c[0]->CountPangkat3c;
-        $datasets["CountPangkat3d"] = $CountPangkat3d[0]->CountPangkat3d;
-        $datasets["CountPangkat4a"] = $CountPangkat4a[0]->CountPangkat4a;
-        $datasets["CountPangkat4b"] = $CountPangkat4b[0]->CountPangkat4b;
-        $datasets["CountPangkat4c"] = $CountPangkat4c[0]->CountPangkat4c;
-        $datasets["CountPangkat4d"] = $CountPangkat4d[0]->CountPangkat4d;
-        $datasets["CountPangkat4e"] = $CountPangkat4e[0]->CountPangkat4e;
+        $datasets["CountPangkat1a"] = $CountPangkat1a;
+        $datasets["CountPangkat1b"] = $CountPangkat1b;
+        $datasets["CountPangkat1c"] = $CountPangkat1c;
+        $datasets["CountPangkat1d"] = $CountPangkat1d;
+        $datasets["CountPangkat2a"] = $CountPangkat2a;
+        $datasets["CountPangkat2b"] = $CountPangkat2b;
+        $datasets["CountPangkat2c"] = $CountPangkat2c;
+        $datasets["CountPangkat2d"] = $CountPangkat2d;
+        $datasets["CountPangkat3a"] = $CountPangkat3a;
+        $datasets["CountPangkat3b"] = $CountPangkat3b;
+        $datasets["CountPangkat3c"] = $CountPangkat3c;
+        $datasets["CountPangkat3d"] = $CountPangkat3d;
+        $datasets["CountPangkat4a"] = $CountPangkat4a;
+        $datasets["CountPangkat4b"] = $CountPangkat4b;
+        $datasets["CountPangkat4c"] = $CountPangkat4c;
+        $datasets["CountPangkat4d"] = $CountPangkat4d;
+        $datasets["CountPangkat4e"] = $CountPangkat4e;
         $datasets["CountPangkatPPPKIII"] = $CountPangkatPPPKIII[0]->CountPangkatPPPKIII;
         $datasets["CountPangkatPPPKV"] = $CountPangkatPPPKV[0]->CountPangkatPPPKV;
         $datasets["CountPangkatPPPKVII"] = $CountPangkatPPPKVII[0]->CountPangkatPPPKVII;
