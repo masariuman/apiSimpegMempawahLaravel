@@ -143,6 +143,11 @@ class EMPController extends Controller
         $datasets[0]->PROYEKSI_TGL_BUP = null;
         $datasets[0]->PROYEKSI_USIA_BUP = null;
         $datasets[0]->FILE_EXISTS = null;
+        $pendidikanFix = DB::select("SELECT * FROM riw_pendidikan WHERE nip = '".$nip."' AND is_deleted = 0 ORDER BY kode_tingkat_pendidikan DESC LIMIT 1");
+        $pendidikanFix2 = DB::select("SELECT * FROM ref_tingkat_pendidikan WHERE kode = ".$pendidikanFix[0]->kode_tingkat_pendidikan);
+        // dd($pendidikanFix2[0]->nama_tingkat_pendidikan);
+        $datasets[0]->TPENDIDIKAN = $pendidikanFix2[0]->nama_tingkat_pendidikan;
+        // dd($datasets);
 
         // $this->siasn->get_api_ws();
         // $this->siasn->get_bkn_sso();
