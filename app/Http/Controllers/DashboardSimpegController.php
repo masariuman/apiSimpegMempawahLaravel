@@ -30,6 +30,74 @@ class DashboardSimpegController extends Controller
         $CountJabatanStruktural = DB::select('SELECT count(*) as CountJabatanStruktural FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND j.kode_jns_jab = 1');
         $CountJabatanFungsional = DB::select('SELECT count(*) as CountJabatanFungsional FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND j.kode_jns_jab = 2');
         $CountJabatanPelaksana = DB::select('SELECT count(*) as CountJabatanPelaksana FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND j.kode_jns_jab = 3');
+
+
+
+
+
+
+
+
+
+
+
+
+        $CountCPNSStruktural = DB::select('SELECT count(*) as CountCPNSStruktural FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 1 AND j.kode_jns_jab = 1');
+
+        $CountCPNSJafungTenagaTeknis = DB::select('SELECT count(*) as CountCPNSJafungTenagaTeknis FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 1 AND j.kode_jns_jab = 2 AND j.kode_kategori_jab = 1');
+        $CountCPNSJafungTenagaKesehatan = DB::select('SELECT count(*) as CountCPNSJafungTenagaKesehatan FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 1 AND j.kode_jns_jab = 2 AND j.kode_kategori_jab = 2');
+        $CountCPNSJafungTenagaGuru = DB::select('SELECT count(*) as CountCPNSJafungTenagaGuru FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 1 AND j.kode_jns_jab = 2 AND j.kode_kategori_jab = 3');
+
+        $CountCPNSPelaksanaTenagaTeknis = DB::select('SELECT count(*) as CountCPNSPelaksanaTenagaTeknis FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 1 AND j.kode_jns_jab = 3 AND j.kode_kategori_jab = 1');
+        $CountCPNSPelaksanaTenagaKesehatan = DB::select('SELECT count(*) as CountCPNSPelaksanaTenagaKesehatan FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 1 AND j.kode_jns_jab = 3 AND j.kode_kategori_jab = 2');
+        $CountCPNSPelaksanaTenagaGuru = DB::select('SELECT count(*) as CountCPNSPelaksanaTenagaGuru FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 1 AND j.kode_jns_jab = 3 AND j.kode_kategori_jab = 3');
+
+
+        $CountPNSStruktural = DB::select('SELECT count(*) as CountPNSStruktural FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 2 AND j.kode_jns_jab = 1');
+
+        $CountPNSJafungTenagaTeknis = DB::select('SELECT count(*) as CountPNSJafungTenagaTeknis FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 2 AND j.kode_jns_jab = 2 AND j.kode_kategori_jab = 1');
+        $CountPNSJafungTenagaKesehatan = DB::select('SELECT count(*) as CountPNSJafungTenagaKesehatan FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 2 AND j.kode_jns_jab = 2 AND j.kode_kategori_jab = 2');
+        $CountPNSJafungTenagaGuru = DB::select('SELECT count(*) as CountPNSJafungTenagaGuru FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 2 AND j.kode_jns_jab = 2 AND j.kode_kategori_jab = 3');
+
+        $CountPNSPelaksanaTenagaTeknis = DB::select('SELECT count(*) as CountPNSPelaksanaTenagaTeknis FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 2 AND j.kode_jns_jab = 3 AND j.kode_kategori_jab = 1');
+        $CountPNSPelaksanaTenagaKesehatan = DB::select('SELECT count(*) as CountPNSPelaksanaTenagaKesehatan FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 2 AND j.kode_jns_jab = 3 AND j.kode_kategori_jab = 2');
+        $CountPNSPelaksanaTenagaGuru = DB::select('SELECT count(*) as CountPNSPelaksanaTenagaGuru FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 2 AND j.kode_jns_jab = 3 AND j.kode_kategori_jab = 3');
+
+
+        $CountPPPKStruktural = DB::select('SELECT count(*) as CountPPPKStruktural FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 7 AND j.kode_jns_jab = 1');
+
+        $CountPPPKJafungTenagaTeknis = DB::select('SELECT count(*) as CountPPPKJafungTenagaTeknis FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 7 AND j.kode_jns_jab = 2 AND j.kode_kategori_jab = 1');
+        $CountPPPKJafungTenagaKesehatan = DB::select('SELECT count(*) as CountPPPKJafungTenagaKesehatan FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 7 AND j.kode_jns_jab = 2 AND j.kode_kategori_jab = 2');
+        $CountPPPKJafungTenagaGuru = DB::select('SELECT count(*) as CountPPPKJafungTenagaGuru FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 7 AND j.kode_jns_jab = 2 AND j.kode_kategori_jab = 3');
+
+        $CountPPPKPelaksanaTenagaTeknis = DB::select('SELECT count(*) as CountPPPKPelaksanaTenagaTeknis FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 7 AND j.kode_jns_jab = 3 AND j.kode_kategori_jab = 1');
+        $CountPPPKPelaksanaTenagaKesehatan = DB::select('SELECT count(*) as CountPPPKPelaksanaTenagaKesehatan FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 7 AND j.kode_jns_jab = 3 AND j.kode_kategori_jab = 2');
+        $CountPPPKPelaksanaTenagaGuru = DB::select('SELECT count(*) as CountPPPKPelaksanaTenagaGuru FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 7 AND j.kode_jns_jab = 3 AND j.kode_kategori_jab = 3');
+
+
+        $CountPPPKPWStruktural = DB::select('SELECT count(*) as CountPPPKPWStruktural FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 9 AND j.kode_jns_jab = 1');
+
+        $CountPPPKPWJafungTenagaTeknis = DB::select('SELECT count(*) as CountPPPKPWJafungTenagaTeknis FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 9 AND j.kode_jns_jab = 2 AND j.kode_kategori_jab = 1');
+        $CountPPPKPWJafungTenagaKesehatan = DB::select('SELECT count(*) as CountPPPKPWJafungTenagaKesehatan FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 9 AND j.kode_jns_jab = 2 AND j.kode_kategori_jab = 2');
+        $CountPPPKPWJafungTenagaGuru = DB::select('SELECT count(*) as CountPPPKPWJafungTenagaGuru FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 9 AND j.kode_jns_jab = 2 AND j.kode_kategori_jab = 3');
+
+        $CountPPPKPWPelaksanaTenagaTeknis = DB::select('SELECT count(*) as CountPPPKPWPelaksanaTenagaTeknis FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 9 AND j.kode_jns_jab = 3 AND j.kode_kategori_jab = 1');
+        $CountPPPKPWPelaksanaTenagaKesehatan = DB::select('SELECT count(*) as CountPPPKPWPelaksanaTenagaKesehatan FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 9 AND j.kode_jns_jab = 3 AND j.kode_kategori_jab = 2');
+        $CountPPPKPWPelaksanaTenagaGuru = DB::select('SELECT count(*) as CountPPPKPWPelaksanaTenagaGuru FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND p.kode_status_pegawai = 9 AND j.kode_jns_jab = 3 AND j.kode_kategori_jab = 3');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         $CountEselon1a = DB::select('SELECT count(*) as CountEselon1a FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND j.kode_eselon = 11');
         $CountEselon1b = DB::select('SELECT count(*) as CountEselon1b FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND j.kode_eselon = 12');
         $CountEselon2a = DB::select('SELECT count(*) as CountEselon2a FROM (pegawai p INNER JOIN master_jab j ON p.nip = j.nip_defenitif) WHERE p.kode_kedudukan_pegawai = 1 AND p.is_deleted = 0 AND j.is_delete = 0 AND j.kode_eselon = 21');
@@ -224,6 +292,39 @@ class DashboardSimpegController extends Controller
         $datasets["CountJabatanStruktural"] = $CountJabatanStruktural[0]->CountJabatanStruktural;
         $datasets["CountJabatanFungsional"] = $CountJabatanFungsional[0]->CountJabatanFungsional;
         $datasets["CountJabatanPelaksana"] = $CountJabatanPelaksana[0]->CountJabatanPelaksana;
+
+        $datasets["CountCPNSStruktural"] = $CountCPNSStruktural[0]->CountCPNSStruktural;
+        $datasets["CountCPNSJafungTenagaTeknis"] = $CountCPNSJafungTenagaTeknis[0]->CountCPNSJafungTenagaTeknis;
+        $datasets["CountCPNSJafungTenagaKesehatan"] = $CountCPNSJafungTenagaKesehatan[0]->CountCPNSJafungTenagaKesehatan;
+        $datasets["CountCPNSJafungTenagaGuru"] = $CountCPNSJafungTenagaGuru[0]->CountCPNSJafungTenagaGuru;
+        $datasets["CountCPNSPelaksanaTenagaTeknis"] = $CountCPNSPelaksanaTenagaTeknis[0]->CountCPNSPelaksanaTenagaTeknis;
+        $datasets["CountCPNSPelaksanaTenagaKesehatan"] = $CountCPNSPelaksanaTenagaKesehatan[0]->CountCPNSPelaksanaTenagaKesehatan;
+        $datasets["CountCPNSPelaksanaTenagaGuru"] = $CountCPNSPelaksanaTenagaGuru[0]->CountCPNSPelaksanaTenagaGuru;
+        $datasets["CountPNSStruktural"] = $CountPNSStruktural[0]->CountPNSStruktural;
+        $datasets["CountPNSJafungTenagaTeknis"] = $CountPNSJafungTenagaTeknis[0]->CountPNSJafungTenagaTeknis;
+        $datasets["CountPNSJafungTenagaKesehatan"] = $CountPNSJafungTenagaKesehatan[0]->CountPNSJafungTenagaKesehatan;
+        $datasets["CountPNSJafungTenagaGuru"] = $CountPNSJafungTenagaGuru[0]->CountPNSJafungTenagaGuru;
+        $datasets["CountPNSPelaksanaTenagaTeknis"] = $CountPNSPelaksanaTenagaTeknis[0]->CountPNSPelaksanaTenagaTeknis;
+        $datasets["CountPNSPelaksanaTenagaKesehatan"] = $CountPNSPelaksanaTenagaKesehatan[0]->CountPNSPelaksanaTenagaKesehatan;
+        $datasets["CountPNSPelaksanaTenagaGuru"] = $CountPNSPelaksanaTenagaGuru[0]->CountPNSPelaksanaTenagaGuru;
+        $datasets["CountPPPKStruktural"] = $CountPPPKStruktural[0]->CountPPPKStruktural;
+        $datasets["CountPPPKJafungTenagaTeknis"] = $CountPPPKJafungTenagaTeknis[0]->CountPPPKJafungTenagaTeknis;
+        $datasets["CountPPPKJafungTenagaKesehatan"] = $CountPPPKJafungTenagaKesehatan[0]->CountPPPKJafungTenagaKesehatan;
+        $datasets["CountPPPKJafungTenagaGuru"] = $CountPPPKJafungTenagaGuru[0]->CountPPPKJafungTenagaGuru;
+        $datasets["CountPPPKPelaksanaTenagaTeknis"] = $CountPPPKPelaksanaTenagaTeknis[0]->CountPPPKPelaksanaTenagaTeknis;
+        $datasets["CountPPPKPelaksanaTenagaKesehatan"] = $CountPPPKPelaksanaTenagaKesehatan[0]->CountPPPKPelaksanaTenagaKesehatan;
+        $datasets["CountPPPKPelaksanaTenagaGuru"] = $CountPPPKPelaksanaTenagaGuru[0]->CountPPPKPelaksanaTenagaGuru;
+        $datasets["CountPPPKPWStruktural"] = $CountPPPKPWStruktural[0]->CountPPPKPWStruktural;
+        $datasets["CountPPPKPWJafungTenagaTeknis"] = $CountPPPKPWJafungTenagaTeknis[0]->CountPPPKPWJafungTenagaTeknis;
+        $datasets["CountPPPKPWJafungTenagaKesehatan
+"] = $CountPPPKPWJafungTenagaKesehatan
+[0]->CountPPPKPWJafungTenagaKesehatan
+;
+        $datasets["CountPPPKPWJafungTenagaGuru"] = $CountPPPKPWJafungTenagaGuru[0]->CountPPPKPWJafungTenagaGuru;
+        $datasets["CountPPPKPWPelaksanaTenagaTeknis"] = $CountPPPKPWPelaksanaTenagaTeknis[0]->CountPPPKPWPelaksanaTenagaTeknis;
+        $datasets["CountPPPKPWPelaksanaTenagaKesehatan"] = $CountPPPKPWPelaksanaTenagaKesehatan[0]->CountPPPKPWPelaksanaTenagaKesehatan;
+        $datasets["CountPPPKPWPelaksanaTenagaGuru"] = $CountPPPKPWPelaksanaTenagaGuru[0]->CountPPPKPWPelaksanaTenagaGuru;
+
         $datasets["CountEselon1a"] = $CountEselon1a[0]->CountEselon1a;
         $datasets["CountEselon1b"] = $CountEselon1b[0]->CountEselon1b;
         $datasets["CountEselon2a"] = $CountEselon2a[0]->CountEselon2a;
