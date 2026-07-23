@@ -316,8 +316,7 @@ class DashboardSimpegController extends Controller
         $datasets["CountPPPKPelaksanaTenagaGuru"] = $CountPPPKPelaksanaTenagaGuru[0]->CountPPPKPelaksanaTenagaGuru;
         $datasets["CountPPPKPWStruktural"] = $CountPPPKPWStruktural[0]->CountPPPKPWStruktural;
         $datasets["CountPPPKPWJafungTenagaTeknis"] = $CountPPPKPWJafungTenagaTeknis[0]->CountPPPKPWJafungTenagaTeknis;
-        $datasets["CountPPPKPWJafungTenagaKesehatan
-"] = $CountPPPKPWJafungTenagaKesehatan
+        $datasets["CountPPPKPWJafungTenagaKesehatan"] = $CountPPPKPWJafungTenagaKesehatan
 [0]->CountPPPKPWJafungTenagaKesehatan
 ;
         $datasets["CountPPPKPWJafungTenagaGuru"] = $CountPPPKPWJafungTenagaGuru[0]->CountPPPKPWJafungTenagaGuru;
