@@ -24,6 +24,9 @@ Route::group(['prefix' => 'v1'], function () {
         Route::get('/all', 'SOTKController@all');
         Route::get('/{code}', 'SOTKController@code');
     });
+    Route::group(['prefix' => 'asn'], function () {
+        Route::get('/{nip}', 'ASNController@person');
+    });
 });
 
 Route::group(['prefix' => 'v2'], function () {
