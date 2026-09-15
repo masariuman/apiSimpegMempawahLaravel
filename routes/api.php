@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'v1'], function () {
     Route::group(['prefix' => 'sotk'], function () {
-        Route::get('/all', 'SOTKController@all');
+        // Route::get('/all', 'SOTKController@all');
         Route::get('/{code}', 'SOTKController@code');
     });
     Route::group(['prefix' => 'asn'], function () {
@@ -30,16 +30,16 @@ Route::group(['prefix' => 'v1'], function () {
 });
 
 Route::group(['prefix' => 'v2'], function () {
-    Route::group(['prefix' => 'emp'], function () {
-        Route::get('/', 'EMPController@aktif');
-        Route::get('/cpns', 'EMPController@cpns');
-        Route::get('/pns', 'EMPController@pns');
-        Route::get('/pppk', 'EMPController@pppk');
-        Route::get('/pensiun', 'EMPController@pensiun');
-        Route::get('/pindah', 'EMPController@pindah');
-        Route::get('/all', 'EMPController@all');
-        Route::get('/{nip}', 'EMPController@person');
-    });
+    // Route::group(['prefix' => 'emp'], function () {
+    //     Route::get('/', 'EMPController@aktif');
+    //     Route::get('/cpns', 'EMPController@cpns');
+    //     Route::get('/pns', 'EMPController@pns');
+    //     Route::get('/pppk', 'EMPController@pppk');
+    //     Route::get('/pensiun', 'EMPController@pensiun');
+    //     Route::get('/pindah', 'EMPController@pindah');
+    //     Route::get('/all', 'EMPController@all');
+    //     Route::get('/{nip}', 'EMPController@person');
+    // });
     Route::group(['prefix' => 'sipmewah'], function () {
         Route::get('/dashboard', 'DashboardSimpegController@dashboard');
         Route::get('/aktif', 'DashboardSimpegController@aktif');
@@ -61,8 +61,18 @@ Route::post('/login', function (Request $request) {
     ]);
 });
 
+Route::group(['prefix' => 'v2', 'middleware' => 'auth:sanctum'], function () {
+    Route::group(['prefix' => 'sotk'], function () {
+        Route::get('/{code}', 'SOTKController@code');
+    });
+    Route::group(['prefix' => 'asn'], function () {
+        Route::get('/{nip}', 'ASNController@person');
+    });
+});
+
 Route::group(['prefix' => 'v3', 'middleware' => 'auth:sanctum'], function () {
     Route::group(['prefix' => 'emp'], function () {
         Route::get('/{nip}', 'EMPController@personJWT');
     });
 });
+
