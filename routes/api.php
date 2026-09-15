@@ -24,9 +24,9 @@ Route::group(['prefix' => 'v1'], function () {
         // Route::get('/all', 'SOTKController@all');
         Route::get('/{code}', 'SOTKController@code');
     });
-    Route::group(['prefix' => 'asn'], function () {
-        Route::get('/{nip}', 'ASNController@person');
-    });
+    // Route::group(['prefix' => 'asn'], function () {
+    //     Route::get('/{nip}', 'ASNController@person');
+    // });
 });
 
 Route::group(['prefix' => 'v2'], function () {
@@ -42,7 +42,7 @@ Route::group(['prefix' => 'v2'], function () {
     // });
     Route::group(['prefix' => 'sipmewah'], function () {
         Route::get('/dashboard', 'DashboardSimpegController@dashboard');
-        Route::get('/aktif', 'DashboardSimpegController@aktif');
+        // Route::get('/aktif', 'DashboardSimpegController@aktif');
     });
 });
 
