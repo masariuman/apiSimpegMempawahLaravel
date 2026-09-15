@@ -45,3 +45,24 @@ Route::group(['prefix' => 'v2'], function () {
         Route::get('/aktif', 'DashboardSimpegController@aktif');
     });
 });
+
+Route::post('/login', function (Request $request) {
+    if (!\Illuminate\Support\Facades\Auth::attempt($request->only('email', 'password'))) {
+        return response()->json(['message' => 'Unauthorized'], 401);
+    }
+
+    $user = \App\Models\User::where('email', $request->email)->firstOrFail();
+    $token = $user->createToken('auth_token')->plainTextToken;
+
+    return response()->json([
+        'message' => 'Login success',
+        'access_token' => $token,
+        'token_type' => 'Bearer'
+    ]);
+});
+
+Route::group(['prefix' => 'v3', 'middleware' => 'auth:sanctum'], function () {
+    Route::group(['prefix' => 'emp'], function () {
+        Route::get('/{nip}', 'EMPController@personJWT');
+    });
+});
