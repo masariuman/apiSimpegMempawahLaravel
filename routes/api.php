@@ -29,22 +29,22 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     // });
 // });
 
-Route::group(['prefix' => 'v2'], function () {
-    // Route::group(['prefix' => 'emp'], function () {
-    //     Route::get('/', 'EMPController@aktif');
-    //     Route::get('/cpns', 'EMPController@cpns');
-    //     Route::get('/pns', 'EMPController@pns');
-    //     Route::get('/pppk', 'EMPController@pppk');
-    //     Route::get('/pensiun', 'EMPController@pensiun');
-    //     Route::get('/pindah', 'EMPController@pindah');
-    //     Route::get('/all', 'EMPController@all');
-    //     Route::get('/{nip}', 'EMPController@person');
-    // });
-    Route::group(['prefix' => 'sipmewah'], function () {
-        Route::get('/dashboard', 'DashboardSimpegController@dashboard');
-        // Route::get('/aktif', 'DashboardSimpegController@aktif');
-    });
-});
+// Route::group(['prefix' => 'v2'], function () {
+//     // Route::group(['prefix' => 'emp'], function () {
+//     //     Route::get('/', 'EMPController@aktif');
+//     //     Route::get('/cpns', 'EMPController@cpns');
+//     //     Route::get('/pns', 'EMPController@pns');
+//     //     Route::get('/pppk', 'EMPController@pppk');
+//     //     Route::get('/pensiun', 'EMPController@pensiun');
+//     //     Route::get('/pindah', 'EMPController@pindah');
+//     //     Route::get('/all', 'EMPController@all');
+//     //     Route::get('/{nip}', 'EMPController@person');
+//     // });
+//     Route::group(['prefix' => 'sipmewah'], function () {
+//         Route::get('/dashboard', 'DashboardSimpegController@dashboard');
+//         // Route::get('/aktif', 'DashboardSimpegController@aktif');
+//     });
+// });
 
 Route::post('/login', function (Request $request) {
     if (!\Illuminate\Support\Facades\Auth::attempt($request->only('email', 'password'))) {
